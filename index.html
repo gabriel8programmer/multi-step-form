@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+  <!--css custon-->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <!--main-->
+  <main>
+    <div class="container-view-step">
+      <div class="step">
+        <div class="step-number active">1</div>
+        <div class="step-title" id="step-title-1">Your info</div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-title" id="step-title-2">Select plans</div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-title" id="step-title-3">Add ons</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-title" id="step-title-4">Summary</div>
+      </div>
+    </div>
+    <div class="container-step-form">
+      <form>
+        <!--step 1-->
+        <div class="step-group" id="step-1">
+          <h4>Personal info</h4>
+          <p>Please provider your name, email address and phone number.</p>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="e.g. Stephen King">
+          </div>
+          <div class="form-group">
+            <label for="email-address">Email Address:</label>
+            <input type="email" name="email-address" id="email-address" placeholder="e.g. stephenking@lorem.com">
+          </div>
+          <div class="form-group">
+            <label for="phone-number">Phone Number:</label>
+            <input type="text" name="phone-number" id="phone-number" placeholder="e.g. +1 234 567 890">
+          </div>
+        </div>
+        
+        <!--step 2 -->
+        <div class="step-group hide" id="step-2">
+          <h4>Select your plan</h4>
+          <p>You have the option of monthly or yearly biling.</p>
+          <!--month plan-->
+          <div class="month-plan">
+            <div class="form-group-radio">
+              <input type="radio" name="month-plan" id="arcade-plan-month" checked value="arcade">
+              <label for="arcade-plan-month">
+                <img src="./assets/img/icon-arcade.svg" alt="">
+                <div class="plan-price">
+                  <strong>Arcade</strong>
+                  <span>$9/mo</span>
+                </div>
+              </label>
+            </div>
+            <div class="form-group-radio">
+              <input type="radio" name="month-plan" id="advanced-plan-month" value="advanced">
+              <label for="advanced-plan-month">
+                <img src="./assets/img/icon-advanced.svg" alt="">
+                <div class="plan-price">
+                  <strong>Advanced</strong>
+                  <span>$12/mo</span>
+                </div>
+              </label>
+            </div>
+            <div class="form-group-radio">
+              <input type="radio" name="month-plan" id="pro-plan-month" value="pro">
+              <label for="pro-plan-month">
+                <img src="./assets/img/icon-pro.svg" alt="">
+                <div class="plan-price">
+                  <strong>Pro</strong>
+                  <span>$15/mo</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!--year plan-->
+          <div class="year-plan hide">
+            <div class="form-group-radio">
+              <input type="radio" name="year-plan" id="arcade-plan-year" checked value="arcade">
+              <label for="arcade-plan-year">
+                <img src="./assets/img/icon-arcade.svg" alt="">
+                <div class="plan-price">
+                  <strong>Arcade</strong>
+                  <span>$90/yr</span>
+                  <strong>2 months free</strong>
+                </div>
+              </label>
+            </div>
+            <div class="form-group-radio">
+              <input type="radio" name="year-plan" id="advanced-plan-year" value="advanced">
+              <label for="advanced-plan-year">
+                <img src="./assets/img/icon-advanced.svg" alt="">
+                <div class="plan-price">
+                  <strong>Advanced</strong>
+                  <span>$120/yr</span>
+                  <strong>2 months free</strong>
+                </div>
+              </label>
+            </div>
+            <div class="form-group-radio">
+              <input type="radio" name="year-plan" id="pro-plan-year" value="pro">
+              <label for="pro-plan-year">
+                <img src="./assets/img/icon-pro.svg" alt="">
+                <div class="plan-price">
+                  <strong>Pro</strong>
+                  <span>$150/yr</span>
+                  <strong>2 Months Free</strong>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <!--switch plan-->
+          <div class="form-group-switch">
+            <!--switch monthly plan-->
+            <input type="radio" name="switch-plan" id="month-plan" value="monthly" checked>
+            <label for="month-plan" class="left">Monthly</label>
+            <!--switch yearly plan-->
+            <input type="radio" name="switch-plan" id="year-plan" value="yearly">
+            <label for="year-plan" class="right">Yearly</label>
+          </div>
+        </div>
+        
+        <!--step 3-->
+        <div class="step-group hide" id="step-3">
+          <h4>Pick add-ons</h4>
+          <p>Add-ons help enhance your gaming experience.</p>
+          
+          <!--pick-ons month-->
+          <div class="pick-ons-monthly">
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="pick-on-month-1" name="pick-on-month">
+              <label for="pick-on-month-1">
+                <strong>Online service</strong>
+                <span>Access to multiplayer games</span>
+                <span>+$1/mo</span>
+              </label>
+            </div>
+            
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="pick-on-month-2" name="pick-on-month">
+              <label for="pick-on-month-2">
+                <strong>Larger storage</strong>
+                <span>Extra 1TB of cloud save</span>
+                <span>+$2/mo</span>
+              </label>
+            </div>
+            
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="pick-on-month-3" name="pick-on-month">
+              <label for="pick-on-month-3">
+                <strong>Customizable Profile</strong>
+                <span>Custom theme on your profile</span>
+                <span>+$2/mo</span>
+              </label>
+            </div>
+          </div>
+          
+          <!--pick-ons yearly-->
+          <div class="pick-ons-yearly hide">
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="pick-on-year-1" name="pick-on-year">
+              <label for="pick-on-year-1">
+                <strong>Online service</strong>
+                <span>Access to multiplayer games</span>
+                <span>+$10/yr</span>
+              </label>
+            </div>
+            
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="pick-on-year-2" name="pick-on-year">
+              <label for="pick-on-year-2">
+                <strong>Larger storage</strong>
+                <span>Extra 1TB of cloud save</span>
+                <span>+$20/yr</span>
+              </label>
+            </div>
+            
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="pick-on-year-3" name="pick-on-year">
+              <label for="pick-on-year-3">
+                <strong>Customizable Profile</strong>
+                <span>Custom theme on your profile</span>
+                <span>+$20/yr</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <!--step 4-->
+        <div class="step-group hide" id="step-4">
+          <h4>Finishing up</h4>
+          <p>Double-check everything looks OK before confirming.</p>
+          <!--dynamic content-->
+          <div class="selected-items"></div>
+          <!--finishing monthly-->
+          <div class="finishing-total finishing-monthly">
+            <span>Total (per month)</span>
+            <strong class="finishing-total-value">$12/mo</strong>
+          </div>
+          <!--finishing yearly-->
+          <div class="finishing-total finishing-yearly hide">
+            <span>Total (per year)</span>
+            <strong class="finishing-total-value">$12/yr</strong>
+          </div>
+        </div>
+        
+        <!--step 5-->
+        <div class="step-group hide" id="step-5">
+          <img src="./assets/img/icon-thank-you.svg" alt="">
+          <h4>Thank you!</h4>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun 
+            using our platform. If you ever need support, please feel free 
+            to email us at support@loremgaming.com.
+          </p>
+        </div>
+        
+        <div class="form-group-buttons">
+          <input type="button" value="Go Back" id="btn-go-back" class="hide">
+          <input type="button" value="Next Step" id="btn-next-step">
+          <input type="submit" value="Confirm" id="btn-confirm" class="hide">
+        </div>
+      </form>
+    </div>
+  </main>
+  
+  <!--footer-->
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/gabriel8programmer/">Gabriel Pereira</a>.
+    </div>
+  </footer>
+</body>
+</html>

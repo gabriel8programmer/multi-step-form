@@ -1,0 +1,516 @@
+/*reset*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*variables*/
+:root {
+  --primary: #052551;
+  --secondary: #473dfa;
+  --tertiary: #c0e4ff;
+  --bg-primary: #fff;
+  --bg-secondary: #eef5ff;
+  --text-primary: #fff;
+  --text-secondary: #000;
+  --text-tertiary: #b3b4b9;
+}
+
+/*fonts*/
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url("../fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url("../fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+/*body*/
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-secondary);
+  font-family: "Ubuntu-Regular";
+}
+
+/*main*/
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/*container step number styles*/
+.container-view-step {
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  background-image: url("../img/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  justify-content: center;
+  height: 172px;
+  background-size: cover;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+}
+
+.step-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+.step-number.active {
+  border-color: transparent;
+  background: var(--tertiary);
+  color: var(--text-secondary);
+}
+
+.step-title {
+  color: var(--text-primary);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  display: none;
+}
+.step-title:before {
+  content: "";
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-size: .85rem;
+}
+#step-title-1:before {
+  content: "step 1";
+}
+#step-title-2:before {
+  content: "step 2";
+}
+#step-title-3:before {
+  content: "step 3";
+}
+#step-title-4:before {
+  content: "step 4";
+}
+
+/*container step form styles*/
+.container-step-form {
+  flex:1;
+  display: flex;
+}
+.container-step-form form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*step grou styles*/
+.step-group {
+  margin: 0 2rem;
+  padding: 2.5rem 1.5rem;
+  background: var(--bg-primary);
+  border-radius: .75rem;
+  position: relative;
+  top: -4rem;
+}
+
+.step-group h4 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-family: "Ubuntu-Bold";
+}
+
+.step-group p {
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+/*form group styles*/
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  color: var(--primary);
+  font-family: "Ubuntu-Medium";
+  font-size: .85rem;
+}
+.form-group input {
+  padding: .75rem;
+  border: 1px solid var(--text-tertiary);
+  border-radius: .5rem;
+}
+.form-group input:focus {
+  outline-color: var(--secondary);
+}
+
+/*form group buttons styles*/
+.form-group-buttons {
+  background: var(--bg-primary);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.form-group-buttons input {
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+#btn-go-back {
+  background: transparent;
+  color: var(--text-tertiary);
+}
+#btn-next-step{
+  background: var(--primary);
+  color: var(--text-primary);
+  margin-left: auto;
+}
+#btn-confirm {
+  background: var(--secondary);
+  color: var(--text-primary);
+}
+
+/*form-group-radio styles*/
+.form-group-radio {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-group-radio label {
+  display: inline-block;
+  width: 100%;
+  border: 2px solid var(--text-tertiary);
+  border-radius: .5rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+.form-group-radio input{
+  display: none;
+}
+.form-group-radio input:checked + label{
+  border-color: var(--secondary);
+  background: var(--bg-secondary);
+}
+.plan-price {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.plan-price strong {
+  color: var(--primary);
+}
+.plan-price span {
+  color: var(--text-tertiary);
+}
+
+/*form group switch styles*/
+.form-group-switch {
+  margin: auto;
+  background: var(--bg-secondary);
+  padding: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  border-radius: .5rem;
+  position: relative;
+}
+.form-group-switch input {
+  display: none;
+}
+.form-group-switch label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  color: var(--text-tertiary);
+  font-family: "Ubuntu-Medium";
+  cursor: pointer;
+}
+.form-group-switch label:after {
+  content: "";
+  width: 2.75rem;
+  height: 1.5rem;
+  background: var(--primary);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+}
+.form-group-switch input:checked + label{
+  color: var(--primary);
+}
+.form-group-switch input:checked + label:after {
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  z-index: 2;
+}
+
+.form-group-switch input:checked + .left:after {
+  left: calc(50% - .6rem);
+}
+
+.form-group-switch input:checked + .right:after {
+  left: calc(50% + .6rem);
+}
+
+/*form group checkbox styles*/
+.form-group-checkbox {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+.form-group-checkbox label {
+  display: block;
+  border: 2px solid var(--text-tertiary);
+  border-radius: .5rem;
+  padding: 1rem;
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  row-gap: .25rem;
+  grid-template-areas: 
+    "checkbox title value"
+    "checkbox desc value";
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: .75rem;
+}
+.form-group-checkbox label:after {
+  content: "";
+  grid-area: checkbox;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid var(--text-tertiary);
+  border-radius: 3px;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+.form-group-checkbox input:checked + label:after{
+  background-color: var(--secondary);
+  content: "\2714";
+  color: #fff;
+  font-size: 1em;
+}
+.form-group-checkbox strong {
+  grid-area: title;
+  color: var(--primary);
+  font-family: "Ubuntu-Bold";
+  font-size: .85rem;
+}
+.form-group-checkbox label span {
+  grid-area: desc;
+  color: var(--text-tertiary);
+  font-family: "Ubuntu-Medium";
+}
+.form-group-checkbox label span:last-child {
+  grid-area: value;
+  color: var(--secondary);
+}
+.form-group-checkbox input {
+  display: none;
+}
+.form-group-checkbox input:checked:after {
+  
+}
+.form-group-checkbox input:checked + label {
+  border-color: var(--secondary);
+  background: var(--bg-secondary);
+}
+
+/*finishing step 4 styles*/
+.selected-items {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+.selected-items .plan {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border-bottom: 2px solid var(--text-tertiary);
+  padding-bottom: 1rem;
+  gap: .25rem;
+  font-family: "Ubuntu-Medium";
+  color: var(--primary);
+}
+
+.selected-items .plan .plan-name {
+  grid-column: span 2;
+}
+.selected-items .plan .plan-price{
+  grid-row: span 2;
+  font-size: .95rem;
+}
+
+.selected-items .plan .plan-change {
+  background: transparent;
+  border: 0;
+  color: var(--text-tertiary);
+  text-decoration: underline;
+  grid-row: 2;
+}
+
+.services {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.service {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+}
+.service .service-name {
+  color: var(--text-tertiary);
+}
+.service .service-price {
+  color: var(--primary);
+}
+
+.finishing-total {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.finishing-total span {
+  color: var(--text-tertiary);
+  font-size: .85rem;
+}
+.finishing-total .finishing-total-value {
+  color: var(--secondary);
+  font-size: 1rem;
+  font-family: "Ubuntu-Bold";
+}
+
+/*step 5 styles*/
+#step-5{
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+#step-5 img {
+  margin-bottom: 1rem;
+}
+#step-5 h4 {
+  margin: .75rem;
+}
+
+/*footer*/
+footer {
+  padding: 2rem 3rem;
+  background: var(--primary);
+  color: var(--text-primary);
+}
+
+/*class utils*/
+.hide {
+  display: none;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: var(--text-tertiary); }
+
+/*media styles*/
+@media (min-width: 1024px){
+  
+  /*main*/
+  main {
+    padding: 2rem 1.5rem;
+    flex-direction: row;
+    background: var(--bg-primary);
+    width: 95%;
+    max-width: 1024px;
+    height: 720px;
+    flex: 0;
+    margin: auto;
+    border-radius: .5rem;
+    box-shadow: 0px 1px 1px #000;
+  }
+  
+  /*container step number styles*/
+  .container-view-step {
+    width: 274px;
+    height: 720px;
+    background-image: url("../img/bg-sidebar-desktop.svg");
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: .75rem;
+  }
+  
+  .step {
+    align-items: center;
+  }
+  
+  .step-title{
+    display: flex;
+  }
+  
+  /*step group styles*/
+  .step-group {
+    top: 0;
+  }
+  
+  .step-group, .form-group-buttons{
+    margin: 0 5rem;
+  }
+  
+  /*plans styles*/
+  .month-plan, .year-plan{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .form-group-radio {
+    display: inline-block;
+    width: 29%;
+    margin-right: 1rem;
+  }
+  .form-group-radio label {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .form-group-radio label img {
+    width: 3rem;
+  }
+  
+  /*step 5 styles*/
+  #step-5{
+    margin: auto 4rem;
+  }
+  
+  #step-5 p{
+    text-align: center;
+  }
+  
+}
